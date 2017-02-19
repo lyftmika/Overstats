@@ -2,3 +2,11 @@
 @import './styles/base';
 @import './styles/type';
 @import './styles/layout';
+
+/* ==========================================================================
+ Components
+========================================================================== */
+
+@import './styles/comps/header';
+@import './styles/comps/sidebar';
+@import './styles/comps/maincontent';

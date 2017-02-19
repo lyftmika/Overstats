@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import UserStats from './UserStats';
-import Menu from './Menu';
+import UserStats from './sidebar/UserStats';
+import Menu from './sidebar/Menu';
 import MainContent from './MainContent';
 
 class Main extends Component {

@@ -4,7 +4,9 @@ class Logo extends Component {
   render () {
     return (
       <div className="logo__container">
-        Logo
+        <div className="logo__logo-text">
+          OVERSTATS
+        </div>
       </div>
     )
   }

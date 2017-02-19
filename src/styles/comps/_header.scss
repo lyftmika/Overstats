@@ -1,0 +1,67 @@
+/* ==========================================================================
+  Header Styling
+========================================================================== */
+
+.header__container {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+
+  border-bottom: 1px solid #DADFE8;
+}
+
+/* ==========================================================================
+ Logo Styling
+========================================================================== */
+
+.logo__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  width: 400px;
+
+  border-right: 1px solid #DADFE8;
+}
+
+.logo__logo-text {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+  Searchbar Styling
+========================================================================== */
+
+.searchbar__container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.searchbar__input {
+  outline: none;
+  border: none;
+  padding: 8px;
+  width: 100%;
+
+  &::-webkit-input-placeholder {color: #222;}
+}
+
+.searchbar__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 64px;
+  width: 128px;
+  padding: 8px;
+  background: orange;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+
+}
+
+
+
+

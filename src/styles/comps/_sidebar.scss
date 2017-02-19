@@ -1,0 +1,71 @@
+/* ==========================================================================
+  Sidebar Styling
+========================================================================== */
+.sidebar__container {
+  display: flex;
+  flex-direction: column;
+  width: 720px;
+  margin-right: 32px;
+}
+
+/* ==========================================================================
+  Userstats Styling
+========================================================================== */
+.userstats__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #DADFE8;
+  border-radius: 2px;
+  padding: 50px 8px;
+  margin-bottom: 24px
+}
+
+/* Avatar Styling */
+
+.avatar__container {
+
+}
+
+.avatar__image {
+  border-radius: 50%;
+}
+
+/* Stats */
+
+.stats__container {
+
+}
+
+.stats__stats-table {
+
+}
+
+
+/* ==========================================================================
+  Menu Styling
+========================================================================== */
+.menu__container {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #DADFE8;
+  border-radius: 2px;
+
+}
+
+.menu__title {
+  padding: 24px 8px;
+  border-bottom: 1px solid #DADFE8;
+}
+
+.menu__item {
+  padding: 32px 8px;
+  border-bottom: 1px solid #DADFE8;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

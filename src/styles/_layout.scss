@@ -3,15 +3,12 @@
   flex-direction: column;
 }
 
-.header__container {
-  display: flex;
-}
-
 .main__container {
   display: flex;
+  padding: 32px;
+
+  height: calc(100vh - 65px);
+  overflow: hidden;
 }
 
-.sidebar__container {
-  display: flex;
-  flex-direction: column;
-}
+
