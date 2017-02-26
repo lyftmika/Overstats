@@ -4,7 +4,7 @@
 .sidebar__container {
   display: flex;
   flex-direction: column;
-  width: 720px;
+  width: 360px;
   margin-right: 32px;
 }
 
@@ -14,13 +14,13 @@
 .userstats__container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  box-shadow: $card-shadow;
 
-  border: 1px solid #DADFE8;
   border-radius: 2px;
   padding: 50px 8px;
-  margin-bottom: 24px
 }
 
 /* Avatar Styling */
@@ -50,21 +50,25 @@
 .menu__container {
   display: flex;
   flex-direction: column;
-
-  border: 1px solid #DADFE8;
+  box-shadow: $card-shadow;
   border-radius: 2px;
 
 }
 
 .menu__title {
+  display: flex;
+  align-items: center;
+  height: 40px;
   padding: 24px 8px;
-  border-bottom: 1px solid #DADFE8;
+  border-bottom: $border-main;
 }
 
 .menu__item {
+  display: flex;
+  align-items: center;
+  height: 80px;
   padding: 32px 8px;
-  border-bottom: 1px solid #DADFE8;
-
+  border-bottom: $border-main;
   &:last-child {
     border-bottom: none;
   }
