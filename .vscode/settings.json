@@ -1,0 +1,25 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.tabSize": 2,
+    "editor.lineHeight": 26,
+    "files.trimTrailingWhitespace": false,
+    "vsicons.projectDetection.disableDetect": true,
+    "workbench.welcome.enabled": false,
+    "editor.wordWrap": true,
+    "emmet.syntaxProfiles": {
+      "javascript": "jsx",
+      "xml": {
+          "attr_quotes": "single"
+      }
+    },
+    "window.zoomLevel": 0,
+    "editor.quickSuggestions": true,
+    "editor.quickSuggestionsDelay": 20,
+    "editor.tabCompletion": true,
+    "workbench.colorTheme": "Ayu Dark",
+    "workbench.iconTheme": "vs-seti",
+    "editor.minimap.enabled": true
+  }
