@@ -4,11 +4,14 @@ import Menu from './sidebar/Menu';
 import MainContent from './MainContent';
 
 class Main extends Component {
+  
   render () {
     return (
       <div className="main__container">
         <div className="sidebar__container">
-          <UserStats/>
+          <UserStats
+            data={this.props.data}
+          />
           <Menu />
         </div>
 
