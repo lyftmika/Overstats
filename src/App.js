@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Main from './comps/main/Main';
 import Header from './comps/header/Header';
+import _ from 'lodash';
 
 import { fetch } from './utils/request';
 
@@ -16,12 +17,15 @@ class App extends Component {
   
   fetchData = url => {
     return fetch(url).then( data => {
-      this.setData(data);
+      this.sortData(data);
     });
   }
 
-  setData = data => {
-    this.setState({data: data.data}, console.log('NEW DATA BITCHES'));
+  sortData = (data = {}) => {
+    //Check what region has data
+    const filteredData = _.pickBy(data.data, _.isObject);
+    const region = Object.keys(filteredData)[0];
+    this.setState({data : filteredData[region]});
   }
 
   render() {

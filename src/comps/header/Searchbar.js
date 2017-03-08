@@ -12,13 +12,14 @@ class Searchbar extends Component {
     let userName = e.target.value;
     if(userName.length < 1) { userName = 'Lyftmika' } // TESTING PURPOSES ONLY
     this.setState({
-      url: `https://owapi.net/api/v3/u/${userName}-2865/stats`
+      url: `https://owapi.net/api/v3/u/${userName}-2865/blob`
     });
   }
 
 
   fetchData = () => {
     this.props.fetchData(this.state.url);
+    console.log('Searching');
   }
 
   render () {
