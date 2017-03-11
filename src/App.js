@@ -11,6 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      show: false,
       data: {},
     }
   }
@@ -28,17 +29,36 @@ class App extends Component {
     this.setState({data : filteredData[region]});
   }
 
-  render() {
+  renderStart = () => {
+    return (
+      <div>LATEN WE ZO BEGINNEN!!</div>
+    )
+  }
+
+  renderShow = () => {
     const { data } = this.state;
     return (
-      <div className="overstats-container">
+      <div>
         <Header 
           data={data} 
           setUrl={this.setUrl} 
           fetchData={this.fetchData}
         />
-
         <Main data={data}/>
+      </div>
+    );
+  }
+
+  renderContent = () => {
+    const { show } = this.state;
+    return show ? this.renderShow() : this.renderStart();
+  }
+
+  render() {
+
+    return (
+      <div className="overstats-container">
+        {this.renderContent()}
       </div>
     );
   }
