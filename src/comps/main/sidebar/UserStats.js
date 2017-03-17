@@ -4,11 +4,11 @@ import Stats from './Stats';
 
 class UserStats extends Component {
   render () {
-    const { data }= this.props;
+    const { data, userName }= this.props;
     return (
       <div className="userstats__container">
         <Avatar data={data} />
-        <Stats data={data} />
+        <Stats userName={userName} stats={data} />
       </div>
     )
   }

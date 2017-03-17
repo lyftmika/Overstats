@@ -6,11 +6,13 @@ import MainContent from './MainContent';
 class Main extends Component {
   
   render () {
+    const { data, userName } = this.props;
     return (
       <div className="main__container">
         <div className="sidebar__container">
           <UserStats
-            data={this.props.data}
+            data={ data }
+            userName={ userName }
           />
           <Menu />
         </div>

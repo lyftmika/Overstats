@@ -14,6 +14,7 @@ class App extends Component {
     this.state = {
       start: true,
       data: {},
+      userName: 'proGenji',
     }
   }
   
@@ -30,24 +31,29 @@ class App extends Component {
     this.setState({data : filteredData[region]});
   }
 
-  renderStart = () => {
+  renderStart() {
     return (
       <Start 
         fetchData={this.fetchData}
-        leaveStart={this.leaveStart}
-      />
-    )
+        setUserName={this.setUserName} 
+        leaveStart={this.leaveStart} 
+      /> 
+    );
   }
 
-  renderShow = () => {
-    const { data } = this.state;
+  renderShow() {
+    const { data, userName } = this.state;
     return (
       <div>
         <Header 
           data={data} 
           fetchData={this.fetchData}
+          setUserName={this.setUserName}
         />
-        <Main data={data}/>
+        <Main 
+          data={data}
+          userName={userName}
+        />
       </div>
     );
   }
@@ -57,8 +63,12 @@ class App extends Component {
     return start ? this.renderStart() : this.renderShow();
   }
 
+  setUserName = userName => {
+    this.setState({userName});
+  }
+
   leaveStart = () => {
-    this.setState({ start: false})
+    this.setState({start: false})
   }
 
   render() {

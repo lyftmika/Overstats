@@ -5,16 +5,22 @@ class Start extends Component {
     super(props);
     this.state = {
       url: '',
+      userName: 'PROGENJI'
     };
   }
   
 
-  setUrl = e => {
+  setSearchData = e => {
     let userName = e.target.value;
     if(userName.length < 1) { userName = 'Lyftmika' } // TESTING PURPOSES ONLY
     this.setState({
       url: `https://owapi.net/api/v3/u/${userName}-2865/blob`
     });
+    this.setUserName(userName);
+  }
+
+  setUserName = userName => {
+    this.props.setUserName(userName);
   }
 
 
@@ -26,7 +32,7 @@ class Start extends Component {
   render() {
     return (
       <div>
-        <input type='text' onChange={this.setUrl} />
+        <input type='text' onChange={this.setSearchData} />
         <div onClick={this.fetchData}> KLIK OP MIJ DAN!</div>
       </div>
     );

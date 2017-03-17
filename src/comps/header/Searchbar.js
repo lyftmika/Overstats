@@ -14,6 +14,11 @@ class Searchbar extends Component {
     this.setState({
       url: `https://owapi.net/api/v3/u/${userName}-2865/blob`
     });
+    this.setUserName(userName);
+  }
+
+  setUserName = userName => {
+    this.props.setUserName()
   }
 
 
