@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Main from './comps/main/Main';
 import Header from './comps/header/Header';
-import Start from './comps/start/Start';
 import _ from 'lodash';
 
 import { fetch } from './utils/request';
@@ -12,9 +11,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      start: true,
       data: {},
-      userName: 'proGenji',
+      userName: 'LyftMika',
     }
   }
   
@@ -29,16 +27,6 @@ class App extends Component {
     const filteredData = _.pickBy(data.data, _.isObject);
     const region = Object.keys(filteredData)[0];
     this.setState({data : filteredData[region]});
-  }
-
-  renderStart() {
-    return (
-      <Start 
-        fetchData={this.fetchData}
-        setUserName={this.setUserName} 
-        leaveStart={this.leaveStart} 
-      /> 
-    );
   }
 
   renderShow() {
@@ -58,11 +46,6 @@ class App extends Component {
     );
   }
 
-  renderContent = () => {
-    const { start } = this.state;
-    return start ? this.renderStart() : this.renderShow();
-  }
-
   setUserName = userName => {
     this.setState({userName});
   }
@@ -74,7 +57,7 @@ class App extends Component {
   render() {
     return (
       <div className="overstats-container">
-        {this.renderContent()}
+        {this.renderShow()}
       </div>
     );
   }
