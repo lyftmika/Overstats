@@ -11,16 +11,10 @@ class Searchbar extends Component {
     };
   }
   
-  onEnter = e => { 
-    if (e.keyCode === 13) {
-      console.log('lol');
-      
-      this.fetchData()
-    }
-  }
   setUserName = e => {
-    const fullUserName = e.target.value;
+    const fullUserName = e.target.value;  
     this.setState({ fullUserName });
+    
   }
 
   getUserName(){
@@ -35,6 +29,13 @@ class Searchbar extends Component {
 
   fetchData = () => {   
     this.props.fetchData(this.getUrl());
+    this.props.setUserName(this.state.fullUserName.split('#')[0])
+  }
+
+  onEnter = e => { 
+    if (e.keyCode === 13) {
+      this.fetchData()
+    }
   }
 
   render () {

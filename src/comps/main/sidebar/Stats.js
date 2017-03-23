@@ -27,7 +27,7 @@ class Stats extends Component {
           </tr>
           <tr>
             <td className="stats__title">Winrate:</td>
-            <td className="stats__value">{stats.winrate}</td>
+            <td className="stats__value">{stats.win_rate}{stats.win_rate ? "%" : ""}</td>
           </tr>
         </table>
       </div>
