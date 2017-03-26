@@ -18,6 +18,10 @@ class App extends Component {
   
   fetchData = url => {
     return fetch(url).then( data => {
+      console.log(data);
+      if (data === 'error') {
+        console.log('Houston we have a problem');
+      }
       this.filterOnRegion(data);
     });
   }
@@ -25,7 +29,8 @@ class App extends Component {
   filterOnRegion = (data = {}) => {
     //Check what region has data
     const filteredData = _.pickBy(data.data, _.isObject);
-    const region = Object.keys(filteredData)[0];
+    console.log(filteredData);
+    const region = Object.keys(filteredData)[1];
     this.setState({data : filteredData[region]});
   }
 
