@@ -4,7 +4,7 @@ class Error extends Component {
   render () {
     return (
       <div>
-        There is an ERROR!
+        Please enter your full battletag (case sensitive) - Username#Battletag
       </div>
     )
   }

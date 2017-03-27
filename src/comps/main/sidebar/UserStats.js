@@ -11,7 +11,7 @@ class UserStats extends Component {
     return (
       <div className="userstats__container">
         <Avatar avatar={avatar} />
-        <Stats userName={userName} data={data} />
+        <Stats userName={userName} data={data}  />
       </div>
     )
   }

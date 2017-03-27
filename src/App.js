@@ -12,16 +12,27 @@ class App extends Component {
     super(props);
     this.state = {
       data: {},
-      userName: 'LyftMika',
+      error: false,
+      userName: '',
+      userName2: '',
     }
   }
   
   fetchData = url => {
     return fetch(url).then( data => {
-      console.log(data);
       if (data === 'error') {
-        console.log('Houston we have a problem');
+        this.setState({
+          error:true,
+          userName2: ''
+        });
+        this.filterOnRegion({});
+        return false;
       }
+
+      this.setState({
+        error: false,
+        userName2: this.state.userName, // SO UGLY FIX THIS PLEASE!
+      });
       this.filterOnRegion(data);
     });
   }
@@ -29,13 +40,18 @@ class App extends Component {
   filterOnRegion = (data = {}) => {
     //Check what region has data
     const filteredData = _.pickBy(data.data, _.isObject);
-    console.log(filteredData);
     const region = Object.keys(filteredData)[1];
     this.setState({data : filteredData[region]});
   }
 
-  renderShow() {
-    const { data, userName } = this.state;
+
+  setUserName = userName => {
+    this.setState({userName});
+  }
+
+  renderContent() {
+    const { data, userName2, error } = this.state;
+
     return (
       <div>
         <Header 
@@ -45,24 +61,17 @@ class App extends Component {
         />
         <Main 
           data={data}
-          userName={userName}
+          userName={userName2}
+          error={error}
         />
       </div>
     );
   }
 
-  setUserName = userName => {
-    this.setState({userName});
-  }
-
-  leaveStart = () => {
-    this.setState({start: false})
-  }
-
   render() {
     return (
       <div className="overstats-container">
-        {this.renderShow()}
+        {this.renderContent()}
       </div>
     );
   }

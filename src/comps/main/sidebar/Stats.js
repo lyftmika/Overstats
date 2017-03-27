@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class Stats extends Component {
   
   render () {
-    const { userName, data } = this.props;
+    let { userName, data } = this.props;
     let stats = {}
     if ( data.stats ) {
       stats = data.stats.competitive.overall_stats;
