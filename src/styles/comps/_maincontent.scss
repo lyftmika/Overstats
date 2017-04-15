@@ -1,5 +1,14 @@
 .content__container {
   display: flex;
-  flex-grow: 1;
+  flex-direction: column;
+  flex: 1;
   border-radius: 2px;
+  max-width: 900px;
+}
+
+.content__header {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 15px;
+  box-shadow: 2px 4px 5px rgba(0,0,0,0.2);
 }

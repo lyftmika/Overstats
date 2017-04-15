@@ -7,9 +7,10 @@ class MainContent extends Component {
 
   renderCards() {
     const { data } = this.props;
-    console.log(data);
     const cards1 = [
-      {title: 'StreetFighter', }
+      {title: 'StreetFighter', value: 200 },
+      {title: 'StreetFighter', value: 200 },
+      {title: 'StreetFighter', value: 200 },
     ];
 
     if(!data.stats) {
@@ -17,15 +18,20 @@ class MainContent extends Component {
     } 
 
     return (
-      <div>
-        <CardRow cards={cards1} />
+      <div className="cardrow__container">
+        <CardRow data={data} cards={cards1} />
+        <CardRow data={data} cards={cards1} />
+        <CardRow data={data} cards={cards1} />
       </div>
     );
   }
 
   render () {
     return (
-      <div>
+      <div className="content__container">
+        <div className="content__header">
+          STATISTICS
+        </div>
         {this.renderCards()}
       </div>
     )

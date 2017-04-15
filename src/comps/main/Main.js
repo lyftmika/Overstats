@@ -23,10 +23,8 @@ class Main extends Component {
           />
           <Menu />
         </div>
-
-        <div className="content__container">
-          {this.renderContent()}
-        </div>
+        
+        {this.renderContent()}
       </div>
     )
   }

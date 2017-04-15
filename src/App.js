@@ -40,7 +40,7 @@ class App extends Component {
   filterOnRegion = (data = {}) => {
     //Check what region has data
     const filteredData = _.pickBy(data.data, _.isObject);
-    const region = Object.keys(filteredData)[1];
+    const region = Object.keys(filteredData)[0];
     this.setState({data : filteredData[region]});
   }
 
@@ -70,7 +70,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="overstats-container">
+      <div className="overstats__container">
         {this.renderContent()}
       </div>
     );
