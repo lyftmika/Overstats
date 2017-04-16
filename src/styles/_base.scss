@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,500i,700,900');
+
 body {
+  font-family: 'Fira Sans';
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
