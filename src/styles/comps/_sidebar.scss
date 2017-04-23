@@ -36,13 +36,26 @@
 /* Stats */
 
 .stats__container {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .stats__stats-table {
-
+ width: 60%;
+ 
+ tr td:first-child {
+   font-weight: bold;
+ }
 }
 
+.stats__username {
+  font-size: 34px;
+  padding: 10px;
+  font-weight: bold;
+}
 
 /* ==========================================================================
   Menu Styling

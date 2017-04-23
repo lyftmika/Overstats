@@ -3,10 +3,10 @@ import Card from './Card';
 
 class CardRow extends Component {
   render () {
-    const { data, cards } = this.props;
+    const { cards } = this.props;
     return (
       <div className="cardrow">
-        {cards.map((card)=> <Card card={card }/>)}
+        {cards.map((card,index)=> <Card key={`card-${index}`} card={card }/>)}
       </div>
     )
   }

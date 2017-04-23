@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
 class Stats extends Component {
   
   render () {
     let { userName, data } = this.props;
-    let stats = {}
+    let stats = {};
     if ( data.stats ) {
       stats = data.stats.competitive.overall_stats;
     }
@@ -27,7 +27,9 @@ class Stats extends Component {
           </tr>
           <tr>
             <td className="stats__title">Winrate:</td>
-            <td className="stats__value">{stats.win_rate}{stats.win_rate ? "%" : ""}</td>
+            <td className="stats__value">
+              {stats.win_rate ? Math.round(stats.win_rate) : ''}{stats.win_rate ? "%" : ""}
+            </td>
           </tr>
         </table>
       </div>

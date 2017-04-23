@@ -6,23 +6,23 @@ import Empty from './Empty';
 class MainContent extends Component {
 
   renderCards() {
-    const { data : { stats : competitive } } = this.props;
+    const { data, data : { stats : {competitive } } } = this.props;
     const cards1 = [
-      {title: 'StreetFighter', subtitle: 'melee final blows', value: competitive.game_stats.melee_final_blows },
-      {title: 'U are on fire', subtitle: 'time spent on fire', value: 200 },
-      {title: 'Stay on the point', subtitle: 'time spent on the point', value: 200 },
+      {title: 'StreetFighter 👊', subtitle: 'melee final blows', value: competitive.game_stats.melee_final_blows, unit: 'kills' },
+      {title: 'U are on fire 🔥', subtitle: 'time spent on fire', value: competitive.game_stats.time_spent_on_fire, unit: 'hours' },
+      {title: 'Stay on the point ⬇️', subtitle: 'time spent on the point', value: competitive.game_stats.objective_time, unit: 'hours' },
     ];
     
     const cards2 = [
-      {title: 'Time Wasted', subtitle: 'total time played', value: 200 },
-      {title: 'Card collector', subtitle: 'total cards collected', value: 200 },
-      {title: 'Olympic gamer', subtitle: 'total medals collected', value: 200 },
+      {title: 'Time Wasted 🕕', subtitle: 'total time played', value: competitive.game_stats.time_played, unit: 'hours' },
+      {title: 'Card collector 🃏', subtitle: 'total cards collected', value: competitive.game_stats.cards, unit: 'cards' },
+      {title: 'Olympic gamer 🥉', subtitle: 'total medals collected', value: competitive.game_stats.medals, unit: ' medals' },
     ];
 
     const cards3 = [
-      {title: 'Tie-maker', subtitle: 'total draw games', value: 200 },
-      {title: 'Multikill', subtitle: 'highest multikill', value: 200 },
-      {title: 'Greenpeace', subtitle: 'total enviromental kills', value: 200 },
+      {title: 'Tie-maker 👔', subtitle: 'total draw games', value: competitive.game_stats.games_tied, unit: 'games' },
+      {title: 'Multikill 🎯', subtitle: 'best kill streak', value: competitive.game_stats.kill_streak_best, unit: 'kills' },
+      {title: 'Greenpeace ✌️', subtitle: 'total enviromental kills', value: competitive.game_stats.environmental_kills, unit: 'kills' },
     ];
 
     if(!data.stats) {
@@ -39,12 +39,13 @@ class MainContent extends Component {
   }
 
   render () {
+    const { data } = this.props;
     return (
       <div className="content__container">
         <div className="content__header">
-          STATISTICS
+          Statistics
         </div>
-        {this.renderCards()}
+        { data.stats ? this.renderCards() : <Empty />}
       </div>
     )
   }

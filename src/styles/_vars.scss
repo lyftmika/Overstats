@@ -5,6 +5,9 @@ $border-main: 1px solid #F7F7F7;
 $border-radius: 3px;
 $letter-spacing: 2px;
 
+$orange: #FA9B1D;
+$font-color-main: rgba(9,9,9,0.7);
+
 @mixin background() {
   background-image: linear-gradient(90deg, #186EB4 0%, #920A0C 79%);
   background-position: bottom;
