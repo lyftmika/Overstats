@@ -4,7 +4,6 @@ class Searchbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: '',
       id: '',
       userName: '',
       fullUserName: '',
@@ -13,8 +12,7 @@ class Searchbar extends Component {
   
   setUserName = e => {
     const fullUserName = e.target.value;  
-    this.setState({ fullUserName });
-    
+    this.setState({ fullUserName });  
   }
 
   getUserName(){
@@ -22,13 +20,9 @@ class Searchbar extends Component {
     return str.split('#');
   }
 
-  getUrl() {
-    const [userName, id] = this.getUserName();
-    return `https://owapi.net/api/v3/u/${userName}-${id}/blob`;
-  }
 
   fetchData = () => {   
-    this.props.fetchData(this.getUrl());
+    this.props.fetchData();
     this.props.setUserName(this.state.fullUserName.split('#')[0])
   }
 

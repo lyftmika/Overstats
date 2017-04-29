@@ -17,9 +17,13 @@ class App extends Component {
       userName2: '',
     }
   }
+
+  getUrl = () => {
+    
+  }
   
   fetchData = url => {
-    return fetch(url).then( data => {
+    return fetch(this.getUrl()).then( data => {
       if (data === 'error') {
         this.setState({
           error:true,
