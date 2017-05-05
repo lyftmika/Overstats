@@ -4,11 +4,11 @@ import Search from './Searchbar';
 
 class Header extends Component {
   render () {
-    const { fetchData, setUserName } = this.props;
+    const {...props} = this.props;
     return (
       <div className="header__container">
         <Logo />
-        <Search fetchData={fetchData} setUserName={setUserName}/>
+        <Search {...props}/>
       </div>
     )
   }

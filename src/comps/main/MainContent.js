@@ -2,13 +2,14 @@ import React, {Component} from 'react'
 import CardRow from './CardRow';
 import Empty from './Empty';
 
-
 class MainContent extends Component {
 
   renderCards() {
-    const { data, data : { stats : {competitive } } } = this.props;
+    const { data, data : { stats : {competitive } }, match } = this.props;
+    const type = match.params.type;
+    console.log(type);
     const cards1 = [
-      {title: 'StreetFighter 👊', subtitle: 'melee final blows', value: competitive.game_stats.melee_final_blows, unit: 'kills' },
+      {title: 'StreetFighter 👊', subtitle: 'melee final blows', value: this[type].game_stats.melee_final_blows, unit: 'kills' },
       {title: 'U are on fire 🔥', subtitle: 'time spent on fire', value: competitive.game_stats.time_spent_on_fire, unit: 'hours' },
       {title: 'Stay on the point ⬇️', subtitle: 'time spent on the point', value: competitive.game_stats.objective_time, unit: 'hours' },
     ];
@@ -39,14 +40,15 @@ class MainContent extends Component {
   }
 
   render () {
-    const { data } = this.props;
+    const { data, ...props } = this.props;
+    console.log({...props});
     return (
-      <div className="content__container">
-        <div className="content__header">
-          Statistics
+        <div className="content__container">
+          <div className="content__header">
+            Statistics
+          </div>
+          { data.stats ? this.renderCards() : <Empty {...props} />}
         </div>
-        { data.stats ? this.renderCards() : <Empty />}
-      </div>
     )
   }
 }

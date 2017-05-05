@@ -3,6 +3,10 @@ import './App.css';
 import Main from './comps/main/Main';
 import Header from './comps/header/Header';
 import _ from 'lodash';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
 
 import { fetch } from './utils/request';
 
@@ -18,12 +22,30 @@ class App extends Component {
     }
   }
 
-  getUrl = () => {
-    
+  filterUser = userName => {
+    //Check if the user is a PSN or a PC user. PC users have a # in the user id.
+    if (userName.includes('#')) {
+      const user = userName.split('#')[0]
+      const id = userName.split('#')[1]
+      return `${user}-${id}`
+    } 
+    return userName
+  }
+
+  checkPlatform = userName => {
+    let platform = 'psn'
+
+    if (userName.includes('#')) {
+      platform = 'pc'
+    }
+    return `?platform=${platform}`
   }
   
-  fetchData = url => {
-    return fetch(this.getUrl()).then( data => {
+  fetchData = userName => {
+    const userId = this.filterUser(userName);
+    const platform = this.checkPlatform(userName);
+    const url = `https://owapi.net/api/v3/u/${userId}/blob${platform}`
+    return fetch(url).then( data => {
       if (data === 'error') {
         this.setState({
           error:true,
@@ -74,9 +96,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="overstats__container">
-        {this.renderContent()}
-      </div>
+      <Router>
+        <div className="overstats__container">
+          {this.renderContent()}
+        </div>
+      </Router>
     );
   }
 }

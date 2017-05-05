@@ -6,24 +6,22 @@ class Searchbar extends Component {
     this.state = {
       id: '',
       userName: '',
-      fullUserName: '',
     };
   }
   
   setUserName = e => {
-    const fullUserName = e.target.value;  
-    this.setState({ fullUserName });  
+    const userName = e.target.value;  
+    this.setState({ userName });  
   }
 
-  getUserName(){
-    const str = this.state.fullUserName;
-    return str.split('#');
+  removeId = userName => {
+    return userName.split('#')[0];
   }
 
 
   fetchData = () => {   
-    this.props.fetchData();
-    this.props.setUserName(this.state.fullUserName.split('#')[0])
+    this.props.fetchData(this.state.userName);
+    this.props.setUserName(this.removeId(this.state.userName))
   }
 
   onEnter = e => { 

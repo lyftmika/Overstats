@@ -3,12 +3,24 @@ import UserStats from './sidebar/UserStats';
 import Menu from './sidebar/Menu';
 import Error from './Error';
 import MainContent from './MainContent';
+import { Route, Switch } from 'react-router-dom';
 
 class Main extends Component {
   
-  renderContent(){
+  renderContent = iets => {
     const { error, data } = this.props;
-    return error ? <Error /> : <MainContent data={data} />
+    console.log({data});
+    console.log({iets});
+    if (error) {
+      return <Error />
+    }
+
+    return (
+      <Switch>
+        <Route path="/:type" render={props => <MainContent data={data} {...props}/> } />
+        <Route path="/achievements" component={MainContent} data={data} />
+      </Switch>    
+    )
   }
   
   render () {
@@ -24,7 +36,7 @@ class Main extends Component {
           <Menu />
         </div>
         
-        {this.renderContent()}
+        {this.renderContent(data)}
       </div>
     )
   }
