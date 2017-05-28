@@ -22,7 +22,7 @@ class Menu extends Component {
         </div>
         <div className="menu__item">
           <Link to="/achievements">
-            <i className='ion-star orange'></i>Achievement
+            <i className='ion-star orange'></i>Achievements
           </Link>
         </div>
       </div>

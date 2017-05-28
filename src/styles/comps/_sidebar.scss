@@ -72,7 +72,8 @@
   display: flex;
   align-items: center;
   height: 40px;
-  padding: 24px 8px;
+  padding: 16px 20px;
+  font-weight: 500;
   border-bottom: $border-main;
 }
 
@@ -99,7 +100,7 @@
       justify-content: center;
       width: 35px;
       height: 35px;
-      margin-right: 10px;
+      margin: 0 10px;
       border-radius: 50%;
       color: white;
 

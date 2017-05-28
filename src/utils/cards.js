@@ -7,7 +7,7 @@ const getData = data => {
       [{title: 'Time Wasted 🕕', subtitle: 'total time played', value: data.game_stats.time_played, unit: 'hours' },
       {title: 'Card collector 🃏', subtitle: 'total cards collected', value: data.game_stats.cards, unit: 'cards' },
       {title: 'Olympic gamer 🏅', subtitle: 'total medals collected', value: data.game_stats.medals, unit: ' medals' }],
-      [{title: 'Tie-maker 👔', subtitle: 'total draw games', value: data.game_stats.games_tied, unit: 'games' },
+      [{title: 'Turret slayer 🔨', subtitle: 'total turrets destroyed', value: data.game_stats.turrets_destroyed, unit: 'turrets' },
       {title: 'Multikill 🎯', subtitle: 'best kill streak', value: data.game_stats.kill_streak_best, unit: 'kills' },
       {title: 'Greenpeace ✌️', subtitle: 'total enviromental kills', value: data.game_stats.environmental_kills, unit: 'kills'}]
     ]

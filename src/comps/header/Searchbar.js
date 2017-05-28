@@ -33,7 +33,7 @@ class Searchbar extends Component {
   render () {
     return (
       <div className="searchbar__container">
-        <input className="searchbar__input username" type="text" placeholder="Username" onKeyDown={this.onEnter} onChange={this.setUserName}/>
+        <input className="searchbar__input username" type="text" placeholder="Username#Battletag - (case sensitive)" onKeyDown={this.onEnter} onChange={this.setUserName}/>
         <div className="searchbar__search" onClick={this.fetchData}>SEARCH</div>
       </div>
     )

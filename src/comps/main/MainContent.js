@@ -29,11 +29,12 @@ class MainContent extends Component {
 
 
   render () {
-    const { data, ...props } = this.props;
+    const { data, match, ...props } = this.props;
+
     return (
         <div className="content__container">
           <div className="content__header">
-            Statistics
+            Statistics - {match.params.type || 'competitive'}
           </div>
           { data.stats ? this.renderCards() : <Empty {...props} />}
         </div>

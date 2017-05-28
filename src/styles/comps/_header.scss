@@ -44,7 +44,16 @@
   padding: 8px;
   width: 100%;
 
-  &::-webkit-input-placeholder {color: #222;}
+  font-family: 'Fira Sans';
+  letter-spacing: $letter-spacing;
+  color: $font-color-main;
+
+  // TODO check crossbrowser plox
+  &::-webkit-input-placeholder {
+    font-family: 'Fira Sans';
+    letter-spacing: $letter-spacing;
+    color: $font-color-main;
+  }
 }
 
 

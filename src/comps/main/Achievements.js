@@ -4,7 +4,7 @@ class Achievements extends Component {
   render () {
     return (
       <div>
-        Achievements yoooooo
+        Achievements will be added later on. Please stay tuned for updates on achievements.
       </div>
     )
   }
