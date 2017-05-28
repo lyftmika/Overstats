@@ -85,4 +85,28 @@
   &:last-child {
     border-bottom: none;
   }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      margin-right: 10px;
+      border-radius: 50%;
+      color: white;
+
+      &.green {background-color: #91cc4e }
+      &.blue {background-color: #4d8aff}
+      &.orange {background-color: #ffb93f }
+   }
+  }
+
 }

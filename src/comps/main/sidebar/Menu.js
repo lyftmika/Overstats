@@ -11,13 +11,19 @@ class Menu extends Component {
           Menu
         </div>
         <div className="menu__item">
-          <Link to="/competitive">Competitive</Link>
+          <Link to="/competitive">
+            <i className='ion-trophy blue'></i> Competitive
+          </Link>
         </div>
         <div className="menu__item">
-          <Link to="/quickplay">Quickplay</Link>
+          <Link to="/quickplay">
+            <i className='ion-ios-game-controller-b green'></i> Quickplay
+          </Link>
         </div>
         <div className="menu__item">
-          <Link to="/achievements">Achievement</Link>
+          <Link to="/achievements">
+            <i className='ion-star orange'></i>Achievement
+          </Link>
         </div>
       </div>
     )
