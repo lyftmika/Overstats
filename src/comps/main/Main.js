@@ -9,8 +9,6 @@ class Main extends Component {
   
   renderContent = iets => {
     const { error, data } = this.props;
-    console.log({data});
-    console.log({iets});
     if (error) {
       return <Error />
     }
@@ -18,6 +16,7 @@ class Main extends Component {
     return (
       <Switch>
         <Route path="/:type" render={props => <MainContent data={data} {...props}/> } />
+        <Route path="/" render={props => <MainContent data={data} {...props}/> } />
         <Route path="/achievements" component={MainContent} data={data} />
       </Switch>    
     )

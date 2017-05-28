@@ -16,6 +16,7 @@ const getData = data => {
 
 
 export const cards = (data, type) => {
+  console.log({type});
   if (type === 'quickplay') {
     return getData(data.stats.quickplay)
   }

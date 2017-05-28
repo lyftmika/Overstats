@@ -11,7 +11,7 @@ round = (value, precision) => {
 
   render () {
     const { card: {title, subtitle, value, unit} } = this.props;
-    console.log(`${title} - ${value}`);
+    // console.log(`${title} - ${value}`);
     
     return (
       <div className="card">

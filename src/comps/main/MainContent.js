@@ -15,8 +15,8 @@ class MainContent extends Component {
 
     return (
       <div className="cardrow__container">
-        {cards(data,type).map(cards => {
-          return <CardRow cards={cards} />
+        {cards(data, type).map((cards, index) => {
+          return <CardRow key={index} cards={cards} />
         })}
       </div>
     );
@@ -25,7 +25,6 @@ class MainContent extends Component {
 
   render () {
     const { data, ...props } = this.props;
-    console.log({...props});
     return (
         <div className="content__container">
           <div className="content__header">

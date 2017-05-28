@@ -6,7 +6,7 @@ class CardRow extends Component {
     const { cards } = this.props;
     return (
       <div className="cardrow">
-        {cards.map((card,index)=> <Card key={`card-${index}`} card={card }/>)}
+        {cards.map((card,index)=> <Card key={index} card={card }/>)}
       </div>
     )
   }
