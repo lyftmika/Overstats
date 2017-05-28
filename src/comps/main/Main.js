@@ -16,7 +16,7 @@ class Main extends Component {
     return (
       <Switch>
         <Route path="/:type" render={props => <MainContent data={data} {...props}/> } />
-        <Route path="/" render={props => <MainContent data={data} {...props}/> } />
+        <Route exact path="/" render={props => <MainContent data={data} {...props}/> } />
         <Route path="/achievements" component={MainContent} data={data} />
       </Switch>    
     )

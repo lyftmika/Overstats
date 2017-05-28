@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import CardRow from './CardRow';
 import Empty from './Empty';
+import Achievements from './Achievements';
 import { cards } from '../../utils/cards';
 
 class MainContent extends Component {
@@ -12,6 +13,10 @@ class MainContent extends Component {
     if(!data.stats) {
       return <Empty />
     } 
+
+    if(type === 'achievements') {
+      return <Achievements />
+    }
 
     return (
       <div className="cardrow__container">
