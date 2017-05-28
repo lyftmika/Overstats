@@ -14,3 +14,13 @@ html {
 *, *:before, *:after {
   box-sizing: border-box;
 }
+
+a {
+  color: $font-color-main;
+  text-decoration: none;
+  transition: 150ms all ease-in-out;
+
+  &:hover {
+    text-decoration: underline
+  }
+}

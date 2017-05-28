@@ -14,7 +14,7 @@ class Menu extends Component {
           <Link to="/competitive">Competitive</Link>
         </div>
         <div className="menu__item">
-          <Link to="/casual">Casual Play</Link>
+          <Link to="/quickplay">Quickplay</Link>
         </div>
         <div className="menu__item">
           <Link to="/achievements">Achievement</Link>
