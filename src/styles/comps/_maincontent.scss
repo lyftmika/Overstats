@@ -14,3 +14,11 @@
   font-weight: bold;
   letter-spacing: $letter-spacing;
 }
+
+.achievements,
+.error {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}

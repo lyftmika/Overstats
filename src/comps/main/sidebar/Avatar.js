@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import logo from './logo.png';
 
 class Avatar extends Component {
   render () {
@@ -15,5 +16,5 @@ class Avatar extends Component {
 export default Avatar
 
 Avatar.defaultProps = {
-  avatar: 'http://lorempixel.com/128/128/cats'
+  avatar: logo
 }

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Achievements extends Component {
   render () {
     return (
-      <div>
+      <div className="achievements">
         Achievements will be added later on. Please stay tuned for updates on achievements.
       </div>
     )

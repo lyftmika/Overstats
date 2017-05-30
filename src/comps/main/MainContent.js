@@ -34,7 +34,7 @@ class MainContent extends Component {
     return (
         <div className="content__container">
           <div className="content__header">
-            Statistics - {match.params.type || 'competitive'}
+            { data.stats ? `Statistics - ${match.params.type || 'competitive'}` : 'Welcome to overstats'}
           </div>
           { data.stats ? this.renderCards() : <Empty {...props} />}
         </div>
