@@ -5,8 +5,15 @@ class Stats extends Component {
   render () {
     let { userName, data } = this.props;
     let stats = {};
+    let rank = '';
     if ( data.stats ) {
-      stats = data.stats.competitive.overall_stats;
+      data.stats.competitive 
+        ? stats = data.stats.competitive.overall_stats 
+        : stats = data.stats.quickplay.overall_stats
+      
+      data.stats.competitive
+        ? rank = data.stats.competitive.overall_stats.comprank
+        : rank = 'Not yet ranked'
     }
 
     return (
@@ -15,7 +22,7 @@ class Stats extends Component {
         <table className="stats__stats-table">
           <tr>
             <td className="stats__title">Rank:</td>
-            <td className="stats__value">{stats.comprank}</td>
+            <td className="stats__value">{rank}</td>
           </tr>
           <tr>
             <td className="stats__title">Level:</td>

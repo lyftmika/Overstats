@@ -4,8 +4,7 @@ import Main from './comps/main/Main';
 import Header from './comps/header/Header';
 import _ from 'lodash';
 import {
-  BrowserRouter as Router,
-  Route
+  BrowserRouter as Router
 } from 'react-router-dom';
 
 import { fetch } from './utils/request';

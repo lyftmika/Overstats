@@ -4,9 +4,9 @@ import Stats from './Stats';
 
 class UserStats extends Component {
   render () {
-    const { data, userName }= this.props;
+    const { data, userName } = this.props;
     let avatar;
-    if (data.stats) { avatar = data.stats.competitive.overall_stats.avatar }
+    if (data.stats) { avatar = data.stats.quickplay.overall_stats.avatar }
 
     return (
       <div className="userstats__container">
@@ -21,5 +21,9 @@ export default UserStats
 
 UserStats.defaultProps = {
   userName: 'Lyftmika',
-  data: {},
+  data: {
+    stats: {
+      competitive: {}
+    }
+  },
 }
