@@ -30,14 +30,11 @@ class MainContent extends Component {
 
   render () {
     const { data, match, ...props } = this.props;
-    let standard;
-    if(data.stats) {
-      standard = data.stats.competitive ? 'competitive' : 'quickplay';
-    }
+
     return (
         <div className="content__container">
           <div className="content__header">
-            { data.stats ? `Statistics - ${match.params.type || standard }` : 'Welcome to overstats'}
+            { data.stats ? `Statistics - ${match.params.type || 'competitive' }` : 'Welcome to overstats'}
           </div>
           { data.stats ? this.renderCards() : <Empty {...props} />}
         </div>
