@@ -65,7 +65,8 @@ class App extends Component {
   filterOnRegion = (data = {}) => {
     //Check what region has data
     const filteredData = _.pickBy(data.data, _.isObject);
-    const region = Object.keys(filteredData)[0];
+    const region = Object.keys(filteredData)[1];
+    console.log(filteredData);
     this.setState({data : filteredData[region]});
   }
 
