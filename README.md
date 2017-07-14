@@ -1,3 +1,0 @@
-# Overstats
-
-## ReadME will follow
