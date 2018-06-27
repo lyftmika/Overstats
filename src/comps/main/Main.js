@@ -2,15 +2,20 @@ import React, {Component} from 'react';
 import UserStats from './sidebar/UserStats';
 import Menu from './sidebar/Menu';
 import Error from './Error';
+import Loader from './Loader';
 import MainContent from './MainContent';
 import { Route, Switch } from 'react-router-dom';
 
 class Main extends Component {
   
-  renderContent = iets => {
-    const { error, data } = this.props;
+  renderContent = () => {
+    const { error, data, loading } = this.props;
     if (error) {
       return <Error />
+    }
+
+    if (loading) {
+      return <Loader />
     }
 
     return (

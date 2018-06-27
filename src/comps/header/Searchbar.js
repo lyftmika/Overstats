@@ -21,7 +21,8 @@ class Searchbar extends Component {
 
   fetchData = () => {   
     this.props.fetchData(this.state.userName);
-    this.props.setUserName(this.removeId(this.state.userName))
+    this.props.setUserName(this.removeId(this.state.userName));
+    this.props.setLoading();
   }
 
   onEnter = e => { 

@@ -6,6 +6,7 @@ class UserStats extends Component {
   render () {
     const { data, userName } = this.props;
     let avatar;
+    console.table(data)
     if (data.stats) { avatar = data.stats.quickplay.overall_stats.avatar }
 
     return (

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Main from './comps/main/Main';
 import Header from './comps/header/Header';
-import _ from 'lodash';
+import pickBy from 'lodash/pickBy';
+import isObject from 'lodash/isObject';
 import {
   BrowserRouter as Router
 } from 'react-router-dom';
@@ -16,6 +17,7 @@ class App extends Component {
     this.state = {
       data: {},
       error: false,
+      loading: false,
       userName: '',
       userName2: '',
     }
@@ -24,30 +26,33 @@ class App extends Component {
   filterUser = userName => {
     //Check if the user is a PSN or a PC user. PC users have a # in the user id.
     if (userName.includes('#')) {
-      const user = userName.split('#')[0]
-      const id = userName.split('#')[1]
-      return `${user}-${id}`
+      const user = userName.split('#')[0];
+      const id = userName.split('#')[1];
+      return `${user}-${id}`;
     } 
-    return userName
+    return userName;
   }
 
   checkPlatform = userName => {
-    let platform = 'psn'
+    let platform = 'psn';
 
     if (userName.includes('#')) {
-      platform = 'pc'
+      platform = 'pc';
     }
-    return `?platform=${platform}`
+    return `?platform=${platform}`;
   }
   
   fetchData = userName => {
     const userId = this.filterUser(userName);
     const platform = this.checkPlatform(userName);
     const url = `https://owapi.net/api/v3/u/${userId}/blob${platform}`
+
+    this.setState({loading: true});
     return fetch(url).then( data => {
       if (data === 'error') {
         this.setState({
           error:true,
+          loading: false,
           userName2: ''
         });
         this.filterOnRegion({});
@@ -55,6 +60,7 @@ class App extends Component {
       }
 
       this.setState({
+        loading: false,
         error: false,
         userName2: this.state.userName, // SO UGLY FIX THIS PLEASE!
       });
@@ -64,9 +70,8 @@ class App extends Component {
 
   filterOnRegion = (data = {}) => {
     //Check what region has data
-    const filteredData = _.pickBy(data.data, _.isObject);
+    const filteredData = pickBy(data.data, isObject);
     const region = Object.keys(filteredData)[1];
-    console.log(filteredData);
     this.setState({data : filteredData[region]});
   }
 
@@ -76,7 +81,7 @@ class App extends Component {
   }
 
   renderContent() {
-    const { data, userName2, error } = this.state;
+    const { data, userName2, error, loading } = this.state;
 
     return (
       <div>
@@ -89,6 +94,7 @@ class App extends Component {
           data={data}
           userName={userName2}
           error={error}
+          loading={loading}
         />
       </div>
     );

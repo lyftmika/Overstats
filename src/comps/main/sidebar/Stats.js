@@ -20,24 +20,26 @@ class Stats extends Component {
       <div className="stats__container">
         <div className="stats__username">{ userName }</div>
         <table className="stats__stats-table">
-          <tr>
-            <td className="stats__title">Rank:</td>
-            <td className="stats__value">{rank}</td>
-          </tr>
-          <tr>
-            <td className="stats__title">Level:</td>
-            <td className="stats__value">{stats.level}</td>
-          </tr>
-          <tr>
-            <td className="stats__title">Prestige:</td>
-            <td className="stats__value">{stats.prestige}</td>
-          </tr>
-          <tr>
-            <td className="stats__title">Winrate:</td>
-            <td className="stats__value">
-              {stats.win_rate ? Math.round(stats.win_rate) : ''}{stats.win_rate ? "%" : ""}
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td className="stats__title">Rank:</td>
+              <td className="stats__value">{rank}</td>
+            </tr>
+            <tr>
+              <td className="stats__title">Level:</td>
+              <td className="stats__value">{stats.level}</td>
+            </tr>
+            <tr>
+              <td className="stats__title">Prestige:</td>
+              <td className="stats__value">{stats.prestige}</td>
+            </tr>
+            <tr>
+              <td className="stats__title">Winrate:</td>
+              <td className="stats__value">
+                {stats.win_rate ? Math.round(stats.win_rate) : ''}{stats.win_rate ? "%" : ""}
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     )
